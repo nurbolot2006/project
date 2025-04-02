@@ -4,7 +4,9 @@ import "./footer.css"
 const Footer = () => {
     return (
         <div className={"footer-container"}>
-            <h1> footer </h1>
+            <div className={"container"}>
+                <h1>footer</h1>
+            </div>
         </div>
     );
 };
