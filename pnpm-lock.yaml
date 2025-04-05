@@ -17,9 +17,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.1.0(react@19.1.0)
-      react-icon:
-        specifier: ^1.0.0
-        version: 1.0.0(babel-runtime@5.8.38)(react@19.1.0)
+      react-icons:
+        specifier: ^1.0.6
+        version: 1.0.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react-redux:
         specifier: ^9.2.0
         version: 9.2.0(@types/react@19.0.12)(react@19.1.0)(redux@5.0.1)
@@ -496,9 +496,6 @@ packages:
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
 
-  babel-runtime@5.8.38:
-    resolution: {integrity: sha512-KpgoA8VE/pMmNCrnEeeXqFG24TIH11Z3ZaimIhJWsin8EbfZy3WzFKUTIan10ZIDgRVvi9EkLbruJElJC9dRlg==}
-
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
@@ -526,10 +523,6 @@ packages:
   cookie@1.0.2:
     resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
     engines: {node: '>=18'}
-
-  core-js@1.2.7:
-    resolution: {integrity: sha512-ZiPp9pZlgxpWRu0M+YWbm6+aQ84XEfH1JRXvfOc/fILWI0VKhLC2LX13X1NYq4fULzLMq7Hfh43CSo2/aIaUPA==}
-    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -768,11 +761,17 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
-  react-icon@1.0.0:
-    resolution: {integrity: sha512-VzSlpBHnLanVw79mOxyq98hWDi6DlxK9qPiZ1bAK6bLurMBCaxO/jjyYUrRx9+JGLc/NbnwOmyE/W5Qglbb2QA==}
+  react-icon-base@1.0.0:
+    resolution: {integrity: sha512-rLncZqco21WQjYjQs7YApSxt9wGMu5b41wWJ6X2pbqWNiR/XDY8GubwXg2a/dfnhrZCSKel3HmqegzvH8FkNkA==}
     peerDependencies:
-      babel-runtime: ^5.3.3
-      react: '>=0.12.0'
+      react: '*'
+      react-dom: '*'
+
+  react-icons@1.0.6:
+    resolution: {integrity: sha512-azinbp6pnzggp84p7EtXAu2pgwptJT1Smylc0Q32+/neMLdS88T5zNeOX5iu4gxhRvgSpamhAZvCt6MDtKRCXg==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.0
+      react-dom: ^0.14.0 || ^15.0.0
 
   react-redux@9.2.0:
     resolution: {integrity: sha512-ROY9fvHhwOD9ySfrF0wmvu//bKCQ6AeZZq1nJNtbDC+kk5DuSuNX/n6YWYF/SYy7bSba4D4FSz8DJeKY/S/r+g==}
@@ -1212,10 +1211,6 @@ snapshots:
 
   argparse@2.0.1: {}
 
-  babel-runtime@5.8.38:
-    dependencies:
-      core-js: 1.2.7
-
   balanced-match@1.0.2: {}
 
   brace-expansion@1.1.11:
@@ -1239,8 +1234,6 @@ snapshots:
   concat-map@0.0.1: {}
 
   cookie@1.0.2: {}
-
-  core-js@1.2.7: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -1492,10 +1485,16 @@ snapshots:
       react: 19.1.0
       scheduler: 0.26.0
 
-  react-icon@1.0.0(babel-runtime@5.8.38)(react@19.1.0):
+  react-icon-base@1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      babel-runtime: 5.8.38
       react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
+  react-icons@1.0.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+      react-icon-base: 1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
   react-redux@9.2.0(@types/react@19.0.12)(react@19.1.0)(redux@5.0.1):
     dependencies:
